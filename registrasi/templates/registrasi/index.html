@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+  {% if submitted %}
+    <p class="success">
+            data kamu berhasil dikirm
+    </p>
+
+{% else %}
+     <form action="" method="post">
+           {% csrf_token %}
+            {{ form.non_field_errors }}
+         <div>
+            {{ form.namalengkap.errors }}
+             {{ form.namalengkap.label_tag }}
+             {{ form.namalengkap }}
+        </div>
+
+        <div>
+            {{ form.email.errors }}
+            {{ form.email.label_tag }}
+            {{ form.email }}
+        </div>
+
+        <div>
+            {{ form.tanggallahir.errors }}
+            {{ form.tanggallahir.label_tag }}
+            {{ form.tanggallahir }}
+        </div>
+
+        <div>
+            {{ form.jeniskelamin.errors }}
+            {{ form.jeniskelamin.label_tag }}
+            {{ form.jeniskelamin }}
+        </div>
+
+        <div>
+            {{ form.alamat.errors }}
+            {{ form.alamat.label_tag }}
+            {{ form.alamat }}
+        </div>
+
+    <div>
+            {{ form.setuju.errors }}
+            {{ form.setuju.label_tag }}
+            {{ form.setuju }}
+        </div>
+
+
+        <input type="submit" value="Submit">
+        </form>
+    {% endif %}
+
+
+</body>
+</html>
